@@ -1,6 +1,6 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
-
+const session = require('express-session')
 const app = express();
 const PORT =  process.env.PORT || 3017;
 
@@ -16,16 +16,39 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-let counter = 0;
+//configure http-session midlleware
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
+
+// let counter = 0;
 
 app.get('/', function(req, res) {
 	res.render('index', {
-		counter
+		counter : req.session.counter
 	});
 });
 
+app.get('/login', function(req,res){
+	res.render('login');
+	
+})
+
+app.post('/login', function(req,res){
+	res.render('login');
+	
+})
+
 app.post('/count', function(req, res) {
-	counter++;
+	
+	if(!req.session.counter) {
+		req.session.counter = 0;
+	}
+	req.session.counter++;
+	res.redirect('/')
+});
+
+app.post('/reset', function(req, res) {
+		
+	req.session.counter = 0;		
 	res.redirect('/')
 });
 
