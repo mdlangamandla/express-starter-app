@@ -5,7 +5,18 @@ body {
 	background-color: #3FA9E2;
 	font-size: 0.75em;
   }
+  .logout{
+	text-align: center;
+	width: 7rem;
+	
+	cursor: pointer;
 
+	
+	color: black;
+	
+
+	border-radius: 19px 19px 19px 19px
+  }
 .btn {
 	padding: 1em;
 	margin: 1em;

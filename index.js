@@ -33,7 +33,12 @@ app.get('/login', function(req,res){
 })
 
 app.post('/login', function(req,res){
-	res.render('login');
+	// res.render('login');
+
+	if (req.body.username){
+
+	}
+	res.redirect('/');
 	
 })
 
@@ -51,6 +56,13 @@ app.post('/reset', function(req, res) {
 	req.session.counter = 0;		
 	res.redirect('/')
 });
+
+app.post('/logout', function(req, res) {
+		
+	req.session.counter = 0;		
+	res.redirect('/login')
+});
+
 
 
 // start  the server and start listening for HTTP request on the PORT number specified...
