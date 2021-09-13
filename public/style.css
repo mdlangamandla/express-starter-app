@@ -4,19 +4,10 @@ body {
 	font-family: arial, sans-serif;
 	background-color: #3FA9E2;
 	font-size: 0.75em;
+	height: 95%;
+	width: 100%;
   }
-  .logout{
-	text-align: center;
-	width: 7rem;
-	
-	cursor: pointer;
 
-	
-	color: black;
-	
-
-	border-radius: 19px 19px 19px 19px
-  }
 .btn {
 	padding: 1em;
 	margin: 1em;
@@ -60,11 +51,7 @@ body {
 		margin: 1em;
 	}
 
-	/* .field label {
-		margin: 1em;
-	} */
-
-
+	
 	.header {
 		/* display: flex; */
 		text-align: center;
@@ -107,7 +94,6 @@ body {
 		/* border: 0.1em solid; */
 		border-radius: 0.25em;
 		/* z-index: 1000; */
-		text-align: center;
 	}
 
 	.cartTotal {
@@ -255,14 +241,13 @@ input[type=submit], button {
 }
   
 table, td, th {    
-    border: 1px solid snow;
+    /* border: 1px solid snow; */
     text-align: left;
 }
 
 table {
     border-collapse: collapse;
     width: 80%;
-	position: static;
 }
 
 th, td {

@@ -1,6 +1,7 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
-const session = require('express-session')
+const session = require('express-session');
+const pizzaFactory = require('./pizzaCart');
 const app = express();
 const PORT =  process.env.PORT || 3017;
 
@@ -10,6 +11,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // enable the static folder...
 app.use(express.static('public'));
+
+//instance for pizza factory function
+const PizzaInstance = pizzaFactory();
 
 // add more middleware to allow for templating support
 
@@ -63,6 +67,54 @@ app.post('/logout', function(req, res) {
 	res.redirect('/login')
 });
 
+
+app.get('/', function(req,res) {
+	res.render('index', {
+		small:pizzaFactory.getSmallPizza(),
+		medium:pizzaFactory.getMediumPizza(),
+		large:pizzaFactory.getLargePizza(),
+		total:pizzaFactory.getTotal(),
+		smallPrice:pizzaFactory.getPizzaPriceSmall(),
+		mediumPrice:pizzaFactory.getPizzaPriceMedium(),
+		largePrice:pizzaFactory.getPizzaPriceLarge(),
+	});
+});
+
+app.get("/addSmall",(req,res)=>{
+	pizzaFactory.addSmallPizza();
+	res.redirect("/")
+	
+})
+
+app.get("/addMedium",(req,res)=>{
+	pizzaFactory.addMediumPizza();
+	res.redirect("/")
+
+})
+
+app.get("/addLarge",(req,res)=>{
+	pizzaFactory.addLargePizza();
+	res.redirect("/")
+})
+
+
+app.get("/subSmall",(req,res)=>{
+	pizzaFactory.subSmallPizza()
+	res.redirect("/")
+
+})
+
+app.get("/subMedium",(req,res)=>{
+	pizzaFactory.subMediumPizza()
+	res.redirect("/")
+
+})
+
+app.get("/subLarge",(req,res)=>{
+	pizzaFactory.subLargePizza()
+	res.redirect("/")
+
+})
 
 
 // start  the server and start listening for HTTP request on the PORT number specified...
