@@ -68,17 +68,17 @@ app.post('/logout', function(req, res) {
 });
 
 
-app.get('/', function(req,res) {
-	res.render('index', {
-		small:pizzaCart.getSmallPizza(),
-		medium:pizzaCart.getMediumPizza(),
-		large:pizzaCart.getLargePizza(),
-		total:pizzaCart.getTotal(),
-		smallPrice:pizzaCart.getPizzaPriceSmall(),
-		mediumPrice:pizzaCart.getPizzaPriceMedium(),
-		largePrice:pizzaCart.getPizzaPriceLarge(),
-	});
-});
+// app.get('/', function(req,res) {
+// 	res.render('index', {
+// 		small:pizzaCart.getSmallPizza(),
+// 		medium:pizzaCart.getMediumPizza(),
+// 		large:pizzaCart.getLargePizza(),
+// 		total:pizzaCart.getTotal(),
+// 		smallPrice:pizzaCart.getPizzaPriceSmall(),
+// 		mediumPrice:pizzaCart.getPizzaPriceMedium(),
+// 		largePrice:pizzaCart.getPizzaPriceLarge(),
+// 	});
+// });
 
 // app.get("/addSmall",(req,res)=>{
 // 	pizzaFactory.addSmallPizza();
