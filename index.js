@@ -70,51 +70,51 @@ app.post('/logout', function(req, res) {
 
 app.get('/', function(req,res) {
 	res.render('index', {
-		small:pizzaFactory.getSmallPizza(),
-		medium:pizzaFactory.getMediumPizza(),
-		large:pizzaFactory.getLargePizza(),
-		total:pizzaFactory.getTotal(),
-		smallPrice:pizzaFactory.getPizzaPriceSmall(),
-		mediumPrice:pizzaFactory.getPizzaPriceMedium(),
-		largePrice:pizzaFactory.getPizzaPriceLarge(),
+		small:pizzaCart.getSmallPizza(),
+		medium:pizzaCart.getMediumPizza(),
+		large:pizzaCart.getLargePizza(),
+		total:pizzaCart.getTotal(),
+		smallPrice:pizzaCart.getPizzaPriceSmall(),
+		mediumPrice:pizzaCart.getPizzaPriceMedium(),
+		largePrice:pizzaCart.getPizzaPriceLarge(),
 	});
 });
 
-app.get("/addSmall",(req,res)=>{
-	pizzaFactory.addSmallPizza();
-	res.redirect("/")
+// app.get("/addSmall",(req,res)=>{
+// 	pizzaFactory.addSmallPizza();
+// 	res.redirect("/")
 	
-})
+// })
 
-app.get("/addMedium",(req,res)=>{
-	pizzaFactory.addMediumPizza();
-	res.redirect("/")
+// app.get("/addMedium",(req,res)=>{
+// 	pizzaFactory.addMediumPizza();
+// 	res.redirect("/")
 
-})
+// })
 
-app.get("/addLarge",(req,res)=>{
-	pizzaFactory.addLargePizza();
-	res.redirect("/")
-})
+// app.get("/addLarge",(req,res)=>{
+// 	pizzaFactory.addLargePizza();
+// 	res.redirect("/")
+// })
 
 
-app.get("/subSmall",(req,res)=>{
-	pizzaFactory.subSmallPizza()
-	res.redirect("/")
+// app.get("/subSmall",(req,res)=>{
+// 	pizzaFactory.subSmallPizza()
+// 	res.redirect("/")
 
-})
+// })
 
-app.get("/subMedium",(req,res)=>{
-	pizzaFactory.subMediumPizza()
-	res.redirect("/")
+// app.get("/subMedium",(req,res)=>{
+// 	pizzaFactory.subMediumPizza()
+// 	res.redirect("/")
 
-})
+// })
 
-app.get("/subLarge",(req,res)=>{
-	pizzaFactory.subLargePizza()
-	res.redirect("/")
+// app.get("/subLarge",(req,res)=>{
+// 	pizzaFactory.subLargePizza()
+// 	res.redirect("/")
 
-})
+// })
 
 
 // start  the server and start listening for HTTP request on the PORT number specified...
